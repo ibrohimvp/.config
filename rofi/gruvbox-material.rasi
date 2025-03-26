@@ -1,0 +1,139 @@
+* {
+    mocha-base: #1e1e2e;
+    mocha-mantle: #181825;
+    mocha-crust: #11111b;
+    mocha-surface0: #313244;
+    
+    mocha-text: #cdd6f4;
+    mocha-subtext0: #a6adc8;
+    mocha-subtext1: #bac2de;
+    
+    mocha-rosewater: #f5e0dc;
+    mocha-flamingo: #f2cdcd;
+    mocha-pink: #f5c2e7;
+    mocha-mauve: #cba6f7;
+    mocha-red: #f38ba8;
+    
+    mocha-maroon: #eba0ac;
+    mocha-peach: #fab387;
+    mocha-yellow: #f9e2af;
+    mocha-green: #a6e3a1;
+    mocha-teal: #94e2d5;
+    mocha-blue: #89b4fa;
+    
+    foreground: @mocha-text;
+    background-color: transparent;
+    
+    highlight: underline bold #f9e2af;
+    
+    transparent: rgba(0,0,0,0.1);
+}
+
+window {
+    location: center;
+    anchor: center;
+    border-radius: 8px;
+    height: 460px;
+    width: 400px;
+    
+    background-color: @transparent;
+    spacing: 0;
+    children: [mainbox];
+    orientation: horizontal;
+}
+
+mainbox {
+    spacing: 0;
+    children: [inputbar, message, listview];
+}
+
+message {
+    padding: 10px;
+    border: 0px 2px 2px 2px;
+    border-color: @mocha-base;
+    background-color: @transparent;
+}
+
+inputbar {
+    color: @mocha-subtext1;
+    padding: 16px;
+    background-color: @transparent;
+    border-color: @mocha-subtext1;
+    
+    border: 3px;
+    border-radius: 8px 8px 0px 0px;
+}
+
+entry, prompt, case-indicator {
+    text-font: inherit;
+    text-color: inherit;
+}
+
+prompt {
+    margin: 0px 1em 0em 0em;
+}
+
+listview {
+    padding: 8px;
+    border-radius: 0px 0px 8px 8px;
+    border: 0px 4px 4px 4px;
+    border-color: @mocha-subtext1;
+    background-color: @transparent;
+    dynamic: false;
+}
+
+element {
+    padding: 5px;
+    vertical-align: 0.5;
+    border-radius: 5px;
+    color: @foreground;
+    text-color: @mocha-subtext1;
+    background-color: @transparent;
+}
+
+element.normal.active {
+    background-color: @mocha-yellow;
+}
+
+element.normal.urgent {
+    background-color: @mocha-red;
+}
+
+element.selected.normal {
+    background-color: @mocha-surface0;
+    text-color: @mocha-base;
+}
+
+element.selected.active {
+    background-color: @mocha-peach;
+}
+
+element.selected.urgent {
+    background-color: @mocha-red;
+}
+
+element.alternate.normal {
+    background-color: @transparent;
+}
+
+element-text, element-icon {
+    size: 3ch;
+    margin: 0 10 0 0;
+    vertical-align: 0.5;
+    text-color: @mocha-subtext1;
+}
+
+button {
+    padding: 6px;
+    color: @foreground;
+    horizontal-align: 0.5;
+    
+    border: 2px 0px 2px 2px;
+    border-radius: 5px;
+    border-color: @foreground;
+}
+
+button.selected.normal {
+    border: 2px 0px 2px 2px;
+    border-color: @foreground;
+}
